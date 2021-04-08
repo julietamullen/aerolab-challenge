@@ -62,7 +62,7 @@ const sort = (e) => {if (products.length !== 0) {
         default:
           setSorted([...products])
           break;
-      }
+      }console.log(products)
     }}
 
 // Hooks
