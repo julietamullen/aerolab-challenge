@@ -169,7 +169,7 @@ select {
     opacity: 0;
   }
   to {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
@@ -270,7 +270,17 @@ select {
 .available {
   opacity: 1;
   pointer-events: none;
-  transform: translateY(var(--translate-y, 0)) translateX(var(--translate-x, 0))
+  transform: translateY(var(--translate-y, 0)) translateX(var(--translate-x, 0));
+  animation: fadeInAvailable 2s;
+}
+
+@keyframes fadeInAvailable {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .available:hover {
