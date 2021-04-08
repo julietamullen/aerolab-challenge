@@ -10,7 +10,7 @@ You can see this deployed at: https://aerolab-challenge-phi.vercel.app/
 * Header image
   * https://unsplash.com/photos/v_bri4iVuiM
 
-* Menu icons
+* Icon
   * https://www.flaticon.com/free-icon/bag_726564?term=bag&page=1&position=10&page=1&position=10&related_id=726564&origin=search
 
 # Getting Started with Create React App
