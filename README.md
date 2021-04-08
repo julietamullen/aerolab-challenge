@@ -2,8 +2,8 @@
 
 You can see this deployed at: https://aerolab-challenge-phi.vercel.app/
 
-![Deployment Image](/public/img1.jpg)
-![Deployment Image](/public/img2.jpg)
+![Deployment Image](/public/img1.png)
+![Deployment Image](/public/img2.png)
 
 ### Resources
 
