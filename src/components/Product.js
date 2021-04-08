@@ -23,9 +23,9 @@ const Product = (props) => {
     return (
         <div className={`product ${canRedeem ? "available" : ""}`} key={Math.floor(Math.random() * 10000)} > {/* Cambia la clase del div de acuerdo a si el usuario tiene suficientes puntos */}
             <div className="front">
-                <p>{category}</p>
+                <p>{category} </p>
                 <img src={image} alt={title}/>
-                <h3>{title}</h3>
+                <h3>{title}<i>{cost} pts.</i></h3>
             </div>
             <div className={`bottom ${canRedeem ? "bag" : ""}`}>
                 <p>{canRedeem ? /*Si tiene suficientes puntos, va a aparece una bolsa de compras*/
