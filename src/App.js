@@ -6,7 +6,7 @@ function App() {
 
   async function fetchData() {
 
-// Fetching user's info from API
+// Levanto los datos de la API y seteo los estados en el momento en el que se monta el componente
 
     const userData = await fetch("https://coding-challenge-api.aerolab.co/user/me", {
         method: 'GET',
@@ -21,8 +21,6 @@ function App() {
     setUserName(user.name)
     setUserPoints(user.points)
 
-// Fetching products info from API
-
     const productsData = await fetch("https://coding-challenge-api.aerolab.co/products", {
       method: 'GET',
       headers:{
@@ -34,46 +32,48 @@ function App() {
   )
 
   const productsJSON = await productsData.json()
+  // Defino los productos
   setProducts(Object.values(productsJSON))
-  setSorted(Object.values(productsJSON))
+  // Defino el orden inicial de los produductos (en el que me los devuelve la API)
+  setSorted(Object.values(productsJSON)) 
 }
 
-// Sorting buttons
+// BOTONES PARA ORDENAR
 
 const sort = (e) => {if (products.length !== 0) {
   const order = e.target.value
-  setSortedBy(order)
+  setSortedBy(order) // Defino de qué forma van a estar ordenados los productos según el botón en el que haga click/opción del menú que se elija
   }}
 
-    const handleSorted = () => {if (products !== undefined) {
+    const handleSorted = () => {if (products !== undefined) { // Devuelvo, según el caso, el array con los productos en el orden que el usuario los quiere ver, o la categoría que quiere ver
       switch(sortedBy) {
         case "Lowest": 
-          setSorted([...products].sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)))
+          setSorted([...products].sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost)))// Si se ordenan por precio ascendente, reordeno los productos ordenados por su precio en ese orden.
         break;
         case "Highest":
-          setSorted([...products].sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost)))
+          setSorted([...products].sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost)))// De igual forma si se ordena por precio descendiente.
           break;
         case "Most recent":
-          setSorted([...products])
+          setSorted([...products]) // Si se ordena por "Más recientes", los productos se van a mostrar igual que como aparecen inicialmente
           break;
         case "Cameras": case "Audio" : case "Smart Home": case "Laptops": case "Monitors & TV": case "PC Accessories": case "Gaming": case "Tablets & E-readers": case "Phones": case "Drones": case "Phone Accessories":
-          setSorted([...products.filter(product => product.category === sortedBy)])
+          setSorted([...products.filter(product => product.category === sortedBy)]) // Si se ordenan por categorías, se van mostrar sólo los productos cuya categoría corresponda a la opción del menú seleccionada
           break;
         default:
-          setSorted([...products])
+          setSorted([...products]) // Por defecto, los productos se muestran en su orden inicial.
           break;
       }
     }}
 
-// Hooks
-
+// Defino los estados
 const [userPoints, setUserPoints] = useState("")
 const [userName, setUserName] = useState("")
 const [products, setProducts] = useState()
 const [sorted, setSorted] = useState()
 const [sortedBy, setSortedBy] = useState("")
-useEffect(() => {fetchData()}, [])
-useEffect(() => {handleSorted()}, [sortedBy])
+
+useEffect(() => {fetchData()}, []) // Voy a buscar los datos de la API cuando el componente se monte
+useEffect(() => {handleSorted()}, [sortedBy]) //Cambio el orden de los productos cada vez que el usuario lo seleccione
 
   return (
     <div className="App">
