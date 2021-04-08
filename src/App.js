@@ -71,7 +71,7 @@ const [userPoints, setUserPoints] = useState("")
 const [userName, setUserName] = useState("")
 const [products, setProducts] = useState()
 const [sorted, setSorted] = useState()
-const [sortedBy, setSortedBy] = useState("Most recent")
+const [sortedBy, setSortedBy] = useState("")
 useEffect(() => {fetchData()}, [])
 useEffect(() => {handleSorted()}, [sortedBy])
 
