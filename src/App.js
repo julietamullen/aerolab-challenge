@@ -43,7 +43,6 @@ function App() {
 const sort = (e) => {if (products.length !== 0) {
   const order = e.target.value
   setSortedBy(order)
-  console.log(products)
   }}
 
     const handleSorted = () => {if (products !== undefined) {

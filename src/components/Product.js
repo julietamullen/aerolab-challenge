@@ -27,7 +27,7 @@ const Product = (props) => {
     }
 
     return (
-        <div className={`product ${canRedeem ? "available" : ""}`} key={Math.floor(Math.random() * 10000)} data-aos="slide-right">
+        <div data-aos="slide-right" className={`product ${canRedeem ? "available" : ""}`} key={Math.floor(Math.random() * 10000)} >
             <div className="front">
                 <p>{category}</p>
                 <img src={image} alt={title}/>

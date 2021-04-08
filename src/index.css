@@ -283,8 +283,12 @@ select {
 
 
 /*MEDIA QUERIES*/
+@media (max-width: 1040px) {
+  .productsContainer{grid-template-columns: auto auto;}
+  
+}
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .productsContainer {
     display: flex;
     flex-direction: column;
