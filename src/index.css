@@ -268,13 +268,13 @@ select {
 .available {
   opacity: 1;
   pointer-events: none;
-  transform: translateY(var(--translate-y, 0)) translateX(var(--translate-x, 0))
+/*  transform: translateY(var(--translate-y, 0)) translateX(var(--translate-x, 0))*/
 }
 
 .available:hover {
   transition: 500ms;
-  --translate-y: -0.2rem;
-  --translate-x: -0.2rem;
+/*  --translate-y: -0.2rem;
+  --translate-x: -0.2rem;*/
   box-shadow: 10px 10px 21px -9px rgba(0,0,0,0.38);
   -webkit-box-shadow: 10px 10px 21px -9px rgba(0,0,0,0.38);
   -moz-box-shadow: 10px 10px 21px -9px rgba(0,0,0,0.38);
