@@ -4,7 +4,24 @@ import coin from "../assets/coin.png"
 
 const Product = (props) => {
 
-    const {title, cost, image, userPoints, setUserPoints, category} = props
+    const {product, title, cost, image, userPoints, setUserPoints, userHistory, setUserHistory, category, id} = props
+
+// AGREGO AL HISTORIAL LOS PRODUCTOS
+
+async function addToHistory () {
+
+    var request = new XMLHttpRequest();
+
+    request.open('POST', 'https://coding-challenge-api.aerolab.co/redeem');
+
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.setRequestHeader('Accept', 'application/json');
+    request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjNzA3OTc2NmZiNTAwMjRhYTg3OGIiLCJpYXQiOjE2MTc3MTk0MTd9.YU2O_MaeRhZ_ueVz3F6at8te5HrvAbmyaf-QRk8UwrA');
+
+    var body = {
+        'productId': `${id}`,
+    };
+    request.send(JSON.stringify(body));}
 
     let canRedeem = false
 
@@ -15,8 +32,10 @@ const Product = (props) => {
     }
 
     const redeemProd = () => {
-        const newPoints = userPoints - cost 
+        const newPoints = userPoints - cost
         alert(`Redeemed succesfully! You have ${newPoints} points left`)
+        setUserHistory([...userHistory, product])
+        addToHistory() // Agrego el producto al historial
         setUserPoints(newPoints) // Actualizo la cantidad de puntos que le quedan después de haber canjeado el producto
     }
 
