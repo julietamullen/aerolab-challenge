@@ -41,9 +41,11 @@ const [userHistory, setUserHistory] = useState()
     }
     )
     const user = await userData.json()
-    setUserName(user.name)
-    setUserPoints(user.points)
+    setUserName(user.name) // Seteo el nombre de usuario según la API
+    setUserPoints(user.points) // Seteo los puntos según la API
 }
+
+// AGREGAR PUNTOS
 
 const addPoints = (amount) => {
   var request = new XMLHttpRequest();

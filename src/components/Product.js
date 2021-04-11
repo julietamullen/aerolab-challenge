@@ -34,7 +34,7 @@ async function addToHistory () {
     const redeemProd = () => {
         const newPoints = userPoints - cost
         alert(`Redeemed succesfully! You have ${newPoints} points left`)
-        setUserHistory([...userHistory, product])
+        setUserHistory([...userHistory, product]) // Actualizo el estado con el producto nuevo
         addToHistory() // Agrego el producto al historial
         setUserPoints(newPoints) // Actualizo la cantidad de puntos que le quedan después de haber canjeado el producto
     }
