@@ -23,7 +23,7 @@ const ProductsContainer = ({ userPoints, setUserPoints, userHistory, setUserHist
 
     const productsJSON = await productsData.json()
     setProducts(Object.values(productsJSON)) // Defino los productos
-    setSorted(Object.values(productsJSON))
+    setSorted(Object.values(productsJSON)) // Defino el orden inicial de los productos mostrados
     }
         
     const sort = (e) => {if (products.length !== 0) {

@@ -2,7 +2,7 @@ import React from "react"
 import coin from "../assets/coin.png"
 import {Link} from "react-router-dom"
 
-const Userbar = ({userPoints, setUserPoints, userName, userHistory}) => {
+const Userbar = ({userPoints, userName, userHistory}) => {
 
         return(
         <div className="header">
