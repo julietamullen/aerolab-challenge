@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import RedeemedProducts from "./RedeemedProducts"
+import RedeemedProducts from "./RedeemedProducts.js"
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Route, Switch, useLocation} from "react-router-dom"
 

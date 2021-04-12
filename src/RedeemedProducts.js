@@ -1,5 +1,5 @@
 import React from "react";
-import Userbar from "../components/Userbar.js";
+import Userbar from "./components/Userbar.js";
 import { useLocation, Link } from "react-router-dom";
 
 const RedeemedProducts = () => {
