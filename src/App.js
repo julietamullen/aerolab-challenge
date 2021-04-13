@@ -62,7 +62,7 @@ const addPoints = (amount) => {
 
   request.send(JSON.stringify(body));
   const newPoints = userPoints + amount
-  alert(`You've added ${amount} points! You now have ${newPoints} points`)
+  alert(`You've added ${amount} points!\nYou now have ${newPoints} points.`)
   setUserPoints(newPoints) // Actualizo la cantidad de puntos a disposición
 }
 
